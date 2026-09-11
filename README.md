@@ -21,7 +21,9 @@ The D6 Fantasy Express core mechanic uses **2 six-sided dice (2d6)** plus an att
 The result determines the outcome:
 
 🟢 **10+** — Full Success
+
 🟡 **7–9** — Success with a Cost
+
 🔴 **6 or less** — Failure / GM Threat
 
 ### Example
