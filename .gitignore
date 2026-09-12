@@ -3,7 +3,8 @@
 
 ### custom ###
 *.db
-
+.env
+.env.*
 
 ### ZIP ###
 *.zip
