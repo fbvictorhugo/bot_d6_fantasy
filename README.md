@@ -6,6 +6,11 @@ D6 Express is a lightweight Discord bot designed to make **D6 Fantasy Express** 
 
 The first version focuses on the core mechanic of the system: **2d6 dice rolls with attribute modifiers**.
 
+
+<a href="https://discord.com/oauth2/authorize?client_id=1548120139747041290">
+  <img src="https://img.shields.io/badge/Add%20to%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Add to Discord">
+</a>
+
 ---
 
 ## 🎲 Dice Roller
