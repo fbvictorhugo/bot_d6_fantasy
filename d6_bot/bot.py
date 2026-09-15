@@ -85,6 +85,16 @@ def format_roll_result(expression: str):
     return format_generic_roll_result(parsed)
 
 
+def format_roll_expression_message(parsed: dict[str, int]) -> str:
+    dice_count = parsed["dice"]
+    sides = parsed["sides"]
+    modifier = parsed["modifier"]
+    modifier_text = (
+        f" + {modifier}" if modifier > 0 else f" - {abs(modifier)}" if modifier < 0 else ""
+    )
+    return f"_for a roll of: {dice_count}d{sides}{modifier_text}_"
+
+
 def format_d6_fantasy_result(parsed: dict[str, int]) -> discord.Embed:
     dice_count = parsed["dice"]
     sides = parsed["sides"]
@@ -124,7 +134,6 @@ def format_generic_roll_result(parsed: dict[str, int]) -> str:
 
     return (
         f"🎲 Result: **[{dice_text}] + {modifier} = `{total}`**\n"
-        f"_Roll: {dice_count}d{sides}{modifier_text}_"
     )
 
 
@@ -144,11 +153,13 @@ class D6FantasyBot(discord.Client):
             expression: str = "2d6",
         ) -> None:
             try:
+                parsed = parse_roll_expression(expression)
                 result = format_roll_result(expression)
+                msg_expression = format_roll_expression_message(parsed)
                 if isinstance(result, discord.Embed):
-                    await interaction.response.send_message(embed=result, ephemeral=False)
+                    await interaction.response.send_message(msg_expression, embed=result, ephemeral=False)
                 else:
-                    await interaction.response.send_message(result, ephemeral=False)
+                    await interaction.response.send_message(msg_expression + "\n" + result, ephemeral=False)
             except ValueError as exc:
                 await interaction.response.send_message(
                     f"⚠️ {exc}\nValid examples: `/roll`, `/roll 2d6`, `/roll 3d8`, `/roll 2d6 +1`.",
