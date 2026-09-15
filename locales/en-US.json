@@ -1,0 +1,18 @@
+{
+  "commands": {
+    "roll": {
+      "description": "Roll dice for D6 Fantasy. Default: 2d6",
+      "expression": "Examples: 2d6, 3d8, 2d6 +1, 1d20"
+    }
+  },
+  "errors": {
+    "invalid_format": "Invalid format. Use examples like: 2d6, 1d20, 2d6 +1, 3d8-2 or +1.",
+    "dice_quantity": "Dice quantity and sides must be greater than zero.",
+    "invalid_usage": "⚠️ {message}\nValid examples: `/roll`, `/roll 2d6`, `/roll 3d8`, `/roll 2d6 +1`."
+  },
+  "roll": {
+    "for_message": "_for a roll of: {dice_count}d{sides}{modifier_text}_",
+    "result": "🎲 Result: [{dice_text}] + {modifier} = `{total}`",
+    "generic_result": "🎲 Result: **[{dice_text}] + {modifier} = `{total}`**\n"
+  }
+}

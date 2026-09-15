@@ -1,0 +1,18 @@
+{
+  "commands": {
+    "roll": {
+      "description": "Rola dados para D6 Fantasy. Padrão: 2d6",
+      "expression": "Exemplos: 2d6, 3d8, 2d6 +1, 1d20"
+    }
+  },
+  "errors": {
+    "invalid_format": "Formato inválido. Use exemplos como: 2d6, 1d20, 2d6 +1, 3d8-2 ou +1.",
+    "dice_quantity": "A quantidade de dados e os lados devem ser maiores que zero.",
+    "invalid_usage": "⚠️ {message}\nExemplos válidos: `/roll`, `/roll 2d6`, `/roll 3d8`, `/roll 2d6 +1`."
+  },
+  "roll": {
+    "for_message": "_para um lançamento de: {dice_count}d{sides}{modifier_text}_",
+    "result": "🎲 Resultado: [{dice_text}] + {modifier} = `{total}`",
+    "generic_result": "🎲 Resultado: **[{dice_text}] + {modifier} = `{total}`**\n"
+  }
+}
